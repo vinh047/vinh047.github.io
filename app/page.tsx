@@ -130,7 +130,7 @@ export default function Portfolio() {
                   <Github size={28} strokeWidth={1.5} />
                 </a>
                 <a
-                  href="https://linkedin.com/in/vinh"
+                  href="https://linkedin.com/in/vinh047"
                   target="_blank"
                   rel="noreferrer"
                   className="text-slate-400 hover:text-blue-600 transition-all hover:scale-110"
@@ -138,7 +138,7 @@ export default function Portfolio() {
                   <Linkedin size={28} strokeWidth={1.5} />
                 </a>
                 <a
-                  href="/resume.pdf"
+                  href="/Nguyen_Duc_Vinh_Resume.pdf"
                   target="_blank"
                   className="group flex items-center gap-2 text-slate-900 font-semibold border-b-2 border-slate-900 pb-1 hover:text-blue-600 hover:border-blue-600 transition-all"
                 >
@@ -806,7 +806,7 @@ export default function Portfolio() {
                   <Github size={20} />
                 </a>
                 <a
-                  href="https://linkedin.com/in/vinh"
+                  href="https://linkedin.com/in/vinh047"
                   target="_blank"
                   className="p-3 bg-slate-800 rounded-full hover:bg-blue-600 hover:text-white transition-all"
                 >
