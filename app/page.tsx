@@ -12,9 +12,9 @@ import {
   Mail,
   Phone,
 } from "lucide-react";
+import Image from "next/image";
 
 export default function Portfolio() {
-
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 selection:bg-blue-100">
       {/* --- HEADER / NAVIGATION --- */}
@@ -153,6 +153,7 @@ export default function Portfolio() {
           </motion.div>
 
           {/* --- IMAGE CONTENT (FLOATING ANIMATIONS) --- */}
+          {/* --- IMAGE CONTENT --- */}
           <motion.div
             className="relative flex-1 flex justify-center mt-10 md:mt-0"
             initial={{ opacity: 0 }}
@@ -166,17 +167,21 @@ export default function Portfolio() {
               className="absolute inset-0 m-auto w-[18rem] h-[18rem] md:w-[26rem] md:h-[26rem] border border-dashed border-slate-300 rounded-full -z-10"
             />
 
-            {/* Khung ảnh chính trôi lơ lửng */}
+            {/* Khung ảnh chính trôi lơ lửng - Đã sửa thành hình tròn đồng nhất */}
             <motion.div
               animate={{ y: [-15, 15, -15] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-64 h-[22rem] md:w-[22rem] md:h-[30rem] rounded-t-full rounded-b-[3rem] bg-slate-100 overflow-hidden shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)] border-8 border-white"
+              className="relative w-64 h-64 md:w-[22rem] md:h-[22rem] rounded-full bg-slate-100 overflow-hidden shadow-[0_20px_50px_rgba(8,_112,_184,_0.1)] border-8 border-white"
             >
-              {/* Vị trí chèn ảnh thật của bạn sau này */}
-              <div className="w-full h-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center">
-                <span className="text-slate-300 text-sm font-semibold tracking-widest uppercase">
-                  
-                </span>
+              <div className="w-full h-full bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center overflow-hidden">
+                <Image
+                  src="/avatar.png"
+                  alt="Nguyen Duc Vinh Avatar"
+                  width={500}
+                  height={500}
+                  priority
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
 
@@ -189,7 +194,7 @@ export default function Portfolio() {
                 ease: "easeInOut",
                 delay: 1,
               }}
-              className="absolute top-10 right-4 md:-right-4 bg-white/80 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-slate-100"
+              className="absolute top-0 right-0 md:-right-4 bg-white/80 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-slate-100"
             >
               <Code2 className="text-blue-600" size={32} />
             </motion.div>
@@ -203,7 +208,7 @@ export default function Portfolio() {
                 ease: "easeInOut",
                 delay: 0.5,
               }}
-              className="absolute bottom-20 left-4 md:-left-4 bg-white/80 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-slate-100"
+              className="absolute bottom-10 left-0 md:-left-4 bg-white/80 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-slate-100"
             >
               <Server className="text-cyan-500" size={32} />
             </motion.div>
@@ -755,7 +760,10 @@ export default function Portfolio() {
       </section>
 
       {/* --- FOOTER --- */}
-      <footer id="contact" className="bg-slate-900 py-16 text-slate-300 border-t border-slate-800">
+      <footer
+        id="contact"
+        className="bg-slate-900 py-16 text-slate-300 border-t border-slate-800"
+      >
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-10">
             {/* Cột trái: Lời kêu gọi & Thông tin liên hệ */}
