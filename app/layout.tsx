@@ -1,5 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import { ThemeProvider } from '@/components/theme-provider'
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
   title: 'Vinh | Software Engineer',
@@ -12,10 +16,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    // Thêm scroll-smooth và scroll-pt-20 vào đây
-    <html lang="en" className="scroll-smooth scroll-pt-20">
-      <body className="antialiased bg-slate-50 text-slate-900">
-        {children}
+    <html lang="en" className={`scroll-smooth scroll-pt-20 ${inter.variable}`} suppressHydrationWarning>
+      <body className="antialiased bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50 transition-colors duration-300">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={false}>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
